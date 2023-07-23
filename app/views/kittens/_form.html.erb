@@ -1,0 +1,35 @@
+<%= form_with model: @kitten, url: kittens_path, html: { id: 'kitten-form', 'data-turbo': false }, local: true do |form| %>
+  <%# if @kitten.errors.any? %>
+    <%# <div id="error_explanation"> %>
+      <%# <ul> %>
+        <%# @kitten.errors.full_messages.each do |message| %>
+          <%#li>= message</li>
+        <%# end %>
+      <%# </ul> %>
+    <%# </div> %>
+  <%# end %>
+
+  <div class="field">
+    <%= form.label :name %><br>
+    <%= form.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :age %><br>
+    <%= form.text_field :age %>
+  </div>
+
+  <div class="field">
+    <%= form.label :cuteness %><br>
+    <%= form.text_field :cuteness %>
+  </div>
+
+  <div class="field">
+    <%= form.label :softness %><br>
+    <%= form.text_field :softness %>
+  </div>
+
+  <div class="actions">
+    <%= form.button %>
+  </div>
+<% end %>
