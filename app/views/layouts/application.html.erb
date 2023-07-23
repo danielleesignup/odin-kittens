@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>OdinKittens</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= javascript_importmap_tags %>
+
+    <style type = "text/css">
+          .flash {
+        padding: 10px;
+        margin-bottom: 10px;
+      }
+
+      .flash.success {
+        background-color: #a3d699;
+        color: #155724;
+      }
+
+      .flash.error {
+        background-color: #f8d7da;
+        color: #721c24;
+      }
+    </style>
+
+  </head>
+
+  <body>
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
+  <!-- Flash messages -->
+<% flash.each do |key, value| %>
+  <div class="flash <%= key %>"><%= value %></div>
+<% end %>
+    <%= yield %>
+  </body>
+</html>
